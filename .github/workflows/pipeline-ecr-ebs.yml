@@ -45,6 +45,12 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     needs: build
+    env:
+      AWS_ACCOUNT_ID: ${{ secrets.AWS_ACCOUNT_ID }}
+      PROJECT_NAME: ${{ vars.PROJECT_NAME }}
+      MODULE_NAME: ${{ vars.MODULE_NAME }}
+      TAG: latest
+      EB_APP_NAME: ${{ vars.EB_APP_NAME }}
     steps:
       - uses: actions/download-artifact@v4
         with:
