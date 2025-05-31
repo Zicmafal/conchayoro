@@ -74,7 +74,7 @@ jobs:
   #          --region $AWS_REGION \
   #    - run: | 
   #        eb deploy --verbose  
-deploy:
+  deploy:
     runs-on: ubuntu-latest
     needs: build
     steps:
