@@ -68,4 +68,10 @@ jobs:
           python -m pip install --upgrade pip
           pip install awsebcli
       - run: |
+          # Configura o ambiente do Elastic Beanstalk
+          eb init $EB_APP_NAME \
+            --platform "$STACK_NAME" \
+            --region $AWS_REGION \
+            --interactive false 
+      - run: | 
           eb deploy --verbose  
